@@ -86,8 +86,6 @@
         transition: all 0.3s ease;
         overflow: hidden;
         padding: 16px;
-/*         border: 1px solid #ccc; */
-/*         border-radius: 10px; */
         margin-bottom: 16px;
         }
 
@@ -104,8 +102,6 @@
         transition: all 0.3s ease;
         overflow: hidden;
         padding: 16px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
         margin-bottom: 16px;
         }
 
@@ -966,11 +962,11 @@
         
           if (extraContent.style.display === "none" || extraContent.style.display === "") {
             extraContent.style.display = "block";
-            toggleLink.textContent = "Collapse";
+            toggleLink.textContent = "Learn More";
             card.classList.add("expanded");
           } else {
             extraContent.style.display = "none";
-            toggleLink.textContent = "Expand";
+            toggleLink.textContent = "Learn More";
             card.classList.remove("expanded");
           }
         }
@@ -978,5 +974,6 @@
 </body>
 
 </html>
+
 
 
