@@ -81,6 +81,24 @@
             color: #FFD700;
         }
     </style>
+    <style>
+        .portfolio-item {
+        transition: all 0.3s ease;
+        overflow: hidden;
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 16px;
+        }
+
+        .portfolio-item.expanded {
+            background-color: #fefcbf;
+        }
+
+        .extra-content {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body class="font-body text-dark bg-light">
     <!-- Navigation -->
@@ -296,6 +314,16 @@
                         <h3 class="text-2xl font-bold mb-2">Social Media Management</h3>
                         <p class="text-gray-600">Café Revolución - Instagram campaign that increased engagement by 120%</p>
                     </div>
+                     <div class="portfolio-item" id="card1">
+                        <!-- <h3>Project Title</h3>
+                        <p>Short content...</p> -->
+
+                        <div class="extra-content" style="display: none;">
+                            <p>This is expanded content with more details...</p>
+                        </div>
+
+                        <a href="javascript:void(0);" onclick="toggleCardSize('card1')">learn more</a>
+                    </div>
                 </div>
                 
                 <!-- Portfolio Item 2 -->
@@ -306,6 +334,15 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">QR Menu Setup</h3>
                         <p class="text-gray-600">Harvest Bistro - Interactive digital menu with order tracking</p>
+                    </div>
+                    <div class="portfolio-item" id="card2">
+                        <!-- Hidden content -->
+                        <div class="extra-content" style="display: none;">
+                            <p>This is extra content about Project One that appears when expanded.</p>
+                        </div>
+
+                        <!-- Toggle link -->
+                        <a href="javascript:void(0);" onclick="toggleCardSize('card2')">learn more</a>
                     </div>
                 </div>
                 
@@ -318,6 +355,13 @@
                         <h3 class="text-2xl font-bold mb-2">Video Editing</h3>
                         <p class="text-gray-600">Global Travel - Promotional campaign video that increased conversions by 85%</p>
                     </div>
+                        <!-- Hidden content -->
+                        <div class="extra-content" style="display: none;">
+                            <p>This is extra content about Project One that appears when expanded.</p>
+                        </div>
+
+                        <!-- Toggle link -->
+                        <a href="javascript:void(0);" onclick="toggleCardSize('card3')">learn more</a>
                 </div>
                 
                 <!-- Portfolio Item 4 -->
@@ -328,6 +372,16 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Photoshoot & Videography</h3>
                         <p class="text-gray-600">Luxury Resorts - Corporate event documentation and press materials</p>
+                    </div>
+                     <div class="portfolio-item" id="card4">
+                    
+                        <!-- Hidden content -->
+                        <div class="extra-content" style="display: none;">
+                            <p>This is extra content about Project One that appears when expanded.</p>
+                        </div>
+
+                        <!-- Toggle link -->
+                        <a href="javascript:void(0);" onclick="toggleCardSize('card4')">learn more</a>
                     </div>
                 </div>
                 
@@ -340,6 +394,18 @@
                         <h3 class="text-2xl font-bold mb-2">SEO Campaign</h3>
                         <p class="text-gray-600">Health Center Plus - Local search ranking improvement from page 3 to top 3</p>
                     </div>
+                    <div class="portfolio-item" id="card5">
+                        <!-- <h3>Project One</h3>
+                        <p>Short content...</p> -->
+
+                        <!-- Hidden content -->
+                        <div class="extra-content" style="display: none;">
+                            <p>This is extra content about Project One that appears when expanded.</p>
+                        </div>
+
+                        <!-- Toggle link -->
+                        <a href="javascript:void(0);" onclick="toggleCardSize('card5')">learn more</a>
+                    </div>
                 </div>
                 
                 <!-- Portfolio Item 6 -->
@@ -350,6 +416,18 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Graphic Design</h3>
                         <p class="text-gray-600">Urban Fashion - Brand identity redesign and social media assets</p>
+                    </div>
+                     <div class="portfolio-item" id="card6">
+                        <!-- <h3>Project One</h3>
+                        <p>Short content...</p> -->
+
+                        <!-- Hidden content -->
+                        <div class="extra-content" style="display: none;">
+                            <p>This is extra content about Project One that appears when expanded.</p>
+                        </div>
+
+                        <!-- Toggle link -->
+                        <a href="javascript:void(0);" onclick="toggleCardSize('card6')">learn more</a>
                     </div>
                 </div>
             </div>
@@ -793,5 +871,23 @@
             });
         });
     </script>
+     <script>
+        function toggleCardSize(cardId) {
+          const card = document.getElementById(cardId);
+          const extraContent = card.querySelector(".extra-content");
+          const toggleLink = card.querySelector("a");
+        
+          if (extraContent.style.display === "none" || extraContent.style.display === "") {
+            extraContent.style.display = "block";
+            toggleLink.textContent = "Collapse";
+            card.classList.add("expanded");
+          } else {
+            extraContent.style.display = "none";
+            toggleLink.textContent = "Expand";
+            card.classList.remove("expanded");
+          }
+        }
+    </script>
 </body>
+
 </html>
